@@ -1,0 +1,146 @@
+@keyframes bounceInZoom {
+  0% {
+    opacity: 0;
+    transform: scale(0.6) translateY(-30px);
+  }
+
+  40% {
+    opacity: 1;
+    transform: scale(1.05) translateY(10px);
+  }
+
+  70% {
+    transform: scale(0.95) translateY(-5px);
+  }
+
+  100% {
+    transform: scale(1) translateY(0);
+    opacity: 1;
+    z-index: 10;
+  }
+}
+
+
+section h2 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  grid-column: 1 / 4;
+  background: -webkit-linear-gradient(#ee9a9a, #ff0000);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: bounceInZoom 0.8s ease-out forwards;
+  opacity: 0;
+  /* necessário para iniciar invisível */
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.depoimentos-section {
+  padding: 80px 20px;
+  background-color: #ffffff;
+  text-align: center;
+}
+
+.depoimentos-section h2 {
+  font-size: 2.8rem;
+  margin-bottom: 40px;
+  color: #1a202c;
+  font-weight: 500;
+  letter-spacing: 1px;
+}
+
+.depoimentos-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 40px;
+  justify-content: center;
+  /* Alinha os itens centralizados */
+  align-items: center;
+  /* Garante o alinhamento vertical */
+  max-width: 1200px;
+  /* Limita a largura do conteúdo */
+  margin: 0 auto;
+  /* Centraliza o conteúdo */
+}
+
+.depoimento-card {
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+  padding: 40px;
+  width: 100%;
+  max-width: 350px;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.depoimento-card .depoimento-nome {
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: #1a202c;
+  margin-bottom: 15px;
+}
+
+.depoimento-card .depoimento-texto {
+  font-size: 1rem;
+  color: #67758a;
+  font-style: italic;
+}
+
+/* Estilo do fundo */
+.depoimentos-section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url('https://via.placeholder.com/1200x800') center center no-repeat;
+  background-size: cover;
+  filter: blur(8px);
+  z-index: -1;
+  opacity: 0.15;
+}
+
+
+/* Adiciona a animação ao entrar na tela */
+
+/* Cascata de delays: cada nth-child tem um tempo diferente */
+.depoimento-card:nth-child(1) {
+  animation-delay: 0.5s;
+}
+
+.depoimento-card:nth-child(2) {
+  animation-delay: 1s;
+}
+
+.depoimento-card:nth-child(3) {
+  animation-delay: 1.5s;
+}
+
+.depoimento-card:nth-child(4) {
+  animation-delay: 2s;
+}
+
+.depoimento-card:nth-child(5) {
+  animation-delay: 2.5s;
+}
+
+.depoimento-card:nth-child(6) {
+  animation-delay: 3s;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+
+  .depoimentos-container {
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    grid-template-rows: auto;
+  }
+
+  .depoimentos-section {
+    padding: 60px 15px;
+  }
+}
+

@@ -1,0 +1,315 @@
+@font-face {
+  font-family: 'kaviar';
+  src: url('fontes/CaviarDreams.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'roboto';
+  src: url('fontes/Roboto-Medium.ttf') format('truetype');
+}
+
+* {
+  font-family: 'kaviar', sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.inicio {
+  position: relative;
+  padding: 250px 20px;
+  text-align: center;
+  align-items: center;
+  font-size: 1.2rem;
+  z-index: 1;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.slideshow {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -2;
+  display: flex;
+  overflow: hidden;
+}
+
+.slide {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  opacity: 0;
+  transform: scale(1.05);
+  animation: slideShowAnimation 28s infinite;
+}
+
+.slide:nth-child(1) { background-image: url('imagens/Projetocontabil.jpeg'); animation-delay: 0s; }
+.slide:nth-child(2) { background-image: url('imagens/Nossa_História_Projeto_João_317.jpg'); animation-delay: 4s; }
+.slide:nth-child(3) { background-image: url('imagens/projetojoao317.jpg'); animation-delay: 8s; }
+.slide:nth-child(4) { background-image: url('imagens/projetojoaoaoa317.jpg'); animation-delay: 12s; }
+.slide:nth-child(5) { background-image: url('imagens/projeto.jpg'); animation-delay: 16s; }
+.slide:nth-child(6) { background-image: url('imagens/ProjetoFiscal.jpeg'); animation-delay: 20s; }
+.slide:nth-child(7) { background-image: url('imagens/joao317.jpg'); animation-delay: 24s; }
+
+@keyframes slideShowAnimation {
+  0% { opacity: 0; transform: scale(1.05); }
+  10% { opacity: 1; transform: scale(1); }
+  30% { opacity: 1; transform: scale(1); }
+  40% { opacity: 0; transform: scale(1.05); }
+  100% { opacity: 0; transform: scale(1.05); }
+}
+
+.inicio::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: -1;
+}
+
+.inicio h1 {
+  margin: 1.5rem;
+  font-size: 2.5rem;
+  color: #fff;
+  text-shadow: 1px 1px 3px #000;
+  font-weight: bold;
+}
+
+.inicio p {
+  margin: 2rem;
+  word-wrap: break-word;
+  font-size: 1.4rem;
+  padding: 10px;
+  color: #fff;
+  text-shadow: 1px 1px 3px #000;
+}
+
+
+/* Rodapé já está atualizado no outro CSS */
+
+
+.botão_inicio {
+  display: inline-block;
+  border-radius: 7px;
+  background-color: transparent;
+  border: 2px solid #ffffff;
+  font-weight: bolder;
+  color: #ffffff;
+  text-shadow: 2px 2px 4px #000;
+  text-align: center;
+  font-size: 15px;
+  padding: 25px;
+  width: 120px  50px 20px 90px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 5px;
+}
+
+.botão_inicio a {
+  color: #ffffff;
+  padding: 50px 10px 50px 10px;
+}
+.botão_inicio:hover {
+  text-decoration: none;
+  text-shadow: 2px 2px 4px #000;
+  background-color: rgb(255, 128, 0);
+  border-color: rgb(255, 128, 0);
+}
+
+.botão_inicio span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.botão_inicio span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.botão_inicio:hover span {
+  padding-right: 25px;
+}
+.botão_inicio:hover span:after {
+  opacity: 1;
+  right: 0;
+  }
+
+@media (max-width: 768px) {
+  .inicio {
+    padding: 150px 20px 160px 20px;
+  }
+
+  .inicio h1 {
+    font-size: 2rem;
+  }
+
+  .inicio p {
+    font-size: 1.2rem;
+  }
+
+  .botao_inicio {
+    padding: 15px;
+    font-size: 14px;
+  }
+  .slide:nth-child(7) { background-image: url('imagens/joao317.jpg'); animation-delay: 42s;
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    background: none;
+    border: none;
+  }
+}
+
+   /* Final do documento */
+   .footer {
+    background-color: #1e272e;
+    color: #f1f1f1;
+    padding: 4rem 2rem;
+    font-family: 'Segoe UI', sans-serif;
+    text-align: center;
+  }
+  
+  .footer-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    align-items: start;
+  }
+  
+  .footer-info h2,
+  .footer-contact h2 {
+    font-size: 1.6rem;
+    margin-bottom: 1rem;
+    color: #ffffff;
+  }
+  
+  .footer-info p {
+    line-height: 1.6;
+    font-size: 0.95rem;
+    color: #dcdcdc;
+  }
+  
+  .social-icons {
+    margin-top: 1rem;
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    flex-wrap: wrap;
+  }
+  
+  .social-icons a {
+    display: inline-block;
+  }
+  
+  .social-icons img {
+    width: 28px;
+    height: 28px;
+    filter: brightness(0) invert(1);
+    transition: transform 0.3s ease;
+  }
+  
+  .social-icons a:hover img {
+    transform: scale(1.2);
+  }
+  
+  .footer-contact form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .contact-form input,
+  .contact-form textarea {
+    padding: 0.8rem;
+    margin-bottom: 1rem;
+    border: none;
+    border-radius: 8px;
+    background-color: #2f3640;
+    color: #ffffff;
+    font-size: 0.95rem;
+    outline: none;
+  }
+  
+  .location-info {
+    margin: 0 0 2rem 0;
+  }
+  
+  .contact-form input::placeholder,
+  .contact-form textarea::placeholder {
+    color: #ccc;
+  }
+  
+  .contact-form button {
+    padding: 0.8rem;
+    background-color: #00a8ff;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+  }
+  
+  .contact-form button:hover {
+    background-color: #0097e6;
+  }
+  
+  .footer-bottom {
+    margin-top: 3rem;
+    text-align: center;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding-top: 1.5rem;
+    font-size: 0.9rem;
+    color: #a4b0be;
+  }
+  
+  /* Responsividade */
+  @media (max-width: 768px) {
+    .footer {
+      padding: 2rem 1rem;
+    }
+  
+    .footer-container {
+      display: flex;
+      flex-direction: column;
+      text-align: center;
+      gap: 2rem;
+      margin: 0;
+      align-items: center;
+    }
+  
+    .footer-info h2,
+    .footer-contact h2 {
+      font-size: 1.4rem;
+    }
+  
+    .social-icons {
+      justify-content: center;
+    }
+
+    .footer-info {
+      order: 3;
+    }
+
+    .footer-contact {
+      order: 2;
+    }
+
+    .footer-location {
+      order: 1;
+    }
+
+  }

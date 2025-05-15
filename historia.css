@@ -1,0 +1,133 @@
+#historia p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+    font-family: kaviar, sans-serif;
+  }
+  
+  .row_historia {
+    display: grid;
+    grid-template-columns: repeat(9, 1fr);
+    gap: 1rem;
+    margin: 0 6rem;
+  }
+  
+  .titulo_H {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin: 3rem 0 2rem 1rem;
+    grid-column: 1 / 4;
+    background: -webkit-linear-gradient(#ee9a9a, #ff0000);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  
+  #texto {
+    grid-column: 1 / 5;
+    font-family: 'Rubik', sans-serif;
+    line-height: 1.6;
+    margin: 2% 0;
+  }
+  
+  #sede, #Expansao {
+    grid-column: 1 / 4;
+    line-height: 1.5;
+    margin: 2% 0;
+  }
+  
+    .reveal.animate {
+      opacity: 1;
+      transform: translateY(0);
+      transition: all 1s ease;
+    }
+    
+    .reveal {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+  
+  .logo_lenda1{
+    position: absolute;
+    top: 7.9%;
+    left: -6%;
+    z-index: 1;
+  }
+
+  .logo_lenda2{
+    position: absolute;
+    top: 8.9%;
+    left: -6%;
+    z-index: 1;
+  }
+  
+  #historia h4 {
+    font-size: 20px;
+    font-weight: 700;
+    margin: 1rem 0;
+    background: -webkit-linear-gradient(#ee9a9a, #ff0000);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  
+  #promo {
+    width: 200%;
+    grid-column: 5 / 10;
+    grid-row: 2 / 5;
+    -webkit-mask-image: radial-gradient(circle, rgba(0, 0, 0, 1) 20%, rgba(0, 0, 0, 0) 70%);
+    mask-image: radial-gradient(circle, rgba(0, 0, 0, 1) 20%, rgba(0, 0, 0, 0) 70%);
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+    -webkit-mask-size: cover;
+    mask-size: cover;
+  }
+  
+  .efeito-imagem {
+    width: 100%;
+    max-width: 800px;
+    height: auto;
+    margin: 2rem auto;
+    display: block;
+    grid-column: 1 / -1;
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s ease;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+  }
+  
+  .efeito-imagem.animate {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+  .efeito-imagem:hover {
+    transform: scale(1.02);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.25);
+  }
+
+  @media (max-width: 768px) {
+    .row_historia {
+      grid-template-columns: 1fr;
+      margin: 0 1rem;
+    }
+  
+    .titulo_H, #texto, #sede, #Expansao, #promo {
+      grid-column: auto !important;
+    }
+  
+    #promo {
+      width: 100%;
+      margin-top: 2rem;
+    }
+  
+    .logo_lenda1, .logo_lenda2 {
+      position: relative;
+      left: 0;
+      top: 0;
+      display: block;
+      margin-bottom: 1rem;
+    }
+  }
+  

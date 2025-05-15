@@ -1,0 +1,104 @@
+#talents {
+  text-align: center;
+  margin-top: 4rem;
+}
+
+#talents h1 {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 2rem;
+  background: -webkit-linear-gradient(#cac2c2, #ff0000);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+#talents p {
+  font-size: 1.05rem;
+  text-align: center;
+}
+
+.mes-box {
+  display: grid;
+  grid-template-columns: repeat(10, 1fr);
+  gap: 10px;
+  margin: 3rem 0;
+  list-style: none;
+}
+
+#DP, #fiscal, #contabil {
+  background-color: #fff;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+  border-radius: 16px;
+  padding: 2rem;
+  margin: 0 1rem;
+  transition: transform 0.7s ease, box-shadow 0.7s ease;
+  line-height: 1.5;
+}
+
+#DP {
+  grid-column: 3 / 6;
+}
+
+#fiscal {
+  grid-column: 6 / 9;
+}
+
+#contabil {
+  grid-column: 4 / 8;
+  grid-row: 2 / 4;
+  margin: 0 4rem;
+}
+
+#large {
+  max-width: 70%;
+  margin: 0 auto;
+  font-size: 1rem;
+  line-height: 1.4rem;
+}
+
+#small {
+  max-width: 60%;
+  margin: auto;
+  line-height: 1.4rem;
+}
+
+#DP:hover, #fiscal:hover, #contabil:hover {
+  transform: translateY(-10px) scale(1.05);
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.35);
+}
+
+[data-anim] {
+  opacity: 0;
+  transform: translateY(60px);
+  transition: opacity 1s ease, transform 1s ease;
+}
+
+[data-anim="zoom-in"] {
+  transform: scale(0.85);
+}
+
+[data-anim].visible {
+  opacity: 1;
+  transform: none;
+}
+
+@media (max-width: 768px) {
+  .mes-box {
+    grid-template-columns: 1fr;
+  }
+
+  #DP, #fiscal, #contabil {
+    grid-column: auto !important;
+    margin: 1rem auto;
+  }
+
+  #large, #small {
+    max-width: 90%;
+    font-size: 0.95rem;
+  }
+
+  #talents h1 {
+    font-size: 1.5rem;
+  }
+}
